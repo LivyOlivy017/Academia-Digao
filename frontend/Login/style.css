@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    min-height: 100vh;
+    font-family: Inter, Arial, sans-serif;
+    color: #f7f7f5;
+    background: #101512;
+}
+
+.page {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Painel esquerdo: imagem + marca. Some no mobile. */
+.brand-panel {
+    flex: 1.1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 56px;
+    background: linear-gradient(180deg, rgba(5, 10, 8, .35), rgba(5, 10, 8, .9)), url('../imagem/IMG_7632.jpg') center/cover;
+}
+
+.brand-mark {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: #c7ff00;
+    color: #111;
+    font: 800 22px Montserrat, sans-serif;
+    margin-bottom: 24px;
+}
+
+.brand-copy h2 {
+    font-family: Montserrat, sans-serif;
+    font-size: 32px;
+    letter-spacing: -1px;
+}
+
+.brand-copy p {
+    margin-top: 10px;
+    max-width: 320px;
+    color: #cfd6d1;
+    font-size: 14px;
+}
+
+/* Painel direito: formulário, alinhado à esquerda dentro do seu próprio
+   espaço — não é mais um cartão flutuando centralizado na tela. */
+.form-panel {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 48px 10vw;
+    background: #121613;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 380px;
+}
+
+.eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #c7ff00;
+    margin-bottom: 10px;
+}
+
+form h1 {
+    font-family: Montserrat, sans-serif;
+    font-size: 34px;
+    letter-spacing: -1px;
+    margin-bottom: 30px;
+}
+
+label {
+    font-size: 13px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    color: #dce1dd;
+}
+
+input {
+    width: 100%;
+    height: 52px;
+    margin-bottom: 20px;
+    padding: 0 16px;
+    border: 1px solid #313934;
+    border-radius: 12px;
+    background: #101512;
+    color: white;
+    outline: none;
+    font: 15px Inter;
+    transition: .2s;
+}
+
+input:focus {
+    border-color: #c7ff00;
+    box-shadow: 0 0 0 4px rgba(199, 255, 0, .12);
+}
+
+#enviar {
+    height: 52px;
+    border: 0;
+    border-radius: 12px;
+    background: #c7ff00;
+    color: #111;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: .2s;
+    margin-top: 4px;
+}
+
+#enviar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(199, 255, 0, .22);
+}
+
+a {
+    text-align: center;
+    margin-top: 22px;
+    color: #c7ff00;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 860px) {
+    .brand-panel {
+        display: none;
+    }
+
+    .form-panel {
+        padding: 40px 24px;
+        justify-content: center;
+    }
+}

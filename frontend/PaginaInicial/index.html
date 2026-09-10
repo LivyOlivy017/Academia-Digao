@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KilosMortais | Treinos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <div class="brand-mark">K</div>
+            <h1 id="Titulo">KilosMortais</h1>
+        </div>
+
+        <div class="nav-actions">
+            <div class="user-info">
+                <span class="status-dot"></span>
+                <h2></h2>
+            </div>
+            <button id="disconnect" class="logout-btn">Sair</button>
+        </div>
+    </nav>
+
+    <main class="dashboard">
+        <section class="hero-panel">
+            <div class="hero-copy">
+                <span class="eyebrow">PAINEL DE TREINOS</span>
+                <h1>Organize as fichas de treino em um só lugar.</h1>
+                <p>Acompanhe os alunos, suas fichas com vários exercícios, séries, repetições e observações.</p>
+            </div>
+            <div class="hero-action">
+                <button id="open"><span>+</span> Nova ficha</button>
+            </div>
+        </section>
+
+        <section class="content-card">
+            <div class="section-top">
+                <div>
+                    <span class="section-label">VISÃO GERAL</span>
+                    <h3>Fichas de treino cadastradas</h3>
+                    <p id="nProdutos"></p>
+                </div>
+            </div>
+
+            <div id="moveTable">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Aluno</th>
+                            <th>Status</th>
+                            <th>Ficha</th>
+                            <th>Exercícios</th>
+                            <th>Professor</th>
+                            <th>Último treino</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <dialog id="modal">
+        <form>
+            <div class="modal-title-row">
+                <div>
+                    <span class="section-label">NOVO CADASTRO</span>
+                    <h3 id="modalTitulo">Adicionar ficha de treino</h3>
+                </div>
+                <div id="closeMove"><button type="button" id="close">×</button></div>
+            </div>
+            <div class="form-grid">
+                <div class="full-width"><label for="Treino">Nome da ficha</label><input type="text" name="Treino" placeholder="Ex.: Treino A - Peito e Tríceps" id="treino" required></div>
+                <div class="full-width"><label for="usuario">Aluno</label><select name="usuario" id="id_usuario" required></select></div>
+            </div>
+
+            <div class="exercicios-header">
+                <label>Exercícios</label>
+                <button type="button" id="add-exercicio">+ Adicionar exercício</button>
+            </div>
+            <div id="lista-exercicios"></div>
+
+            <button id="btn-confirmar" type="submit">Confirmar ficha</button>
+        </form>
+    </dialog>
+
+    <template id="template-exercicio">
+        <div class="exercicio-row">
+            <button type="button" class="remover-exercicio" title="Remover exercício">×</button>
+            <div class="form-grid">
+                <div class="full-width"><label>Exercício</label><input type="text" class="ex-nome" placeholder="Ex.: Supino reto" required></div>
+                <div><label>Séries</label><input type="text" class="ex-series" placeholder="Ex.: 4" required></div>
+                <div><label>Repetições</label><input type="text" class="ex-repeticoes" placeholder="Ex.: 12" required></div>
+                <div class="full-width"><label>Observações</label><input type="text" class="ex-observacoes" placeholder="Opcional"></div>
+            </div>
+        </div>
+    </template>
+
+    <dialog id="DetalhesModal">
+        <button id="closeDetalhes" aria-label="Fechar modal">×</button>
+        <div id="Detalhes">
+            <div class="modal-header"><span class="section-label">FICHA DO ALUNO</span><h1 id="Nome_aluno"></h1></div>
+            <div class="detalhes-grid">
+                <div class="detalhe-item"><span class="icone">⚖</span><div><small>PESO</small><p id="Detalhes_peso"></p></div></div>
+                <div class="detalhe-item"><span class="icone">↕</span><div><small>ALTURA</small><p id="Detalhes_altura"></p></div></div>
+                <div class="detalhe-item"><span class="icone">◷</span><div><small>IDADE</small><p id="Detalhes_idade"></p></div></div>
+                <div class="detalhe-item"><span class="icone">●</span><div><small>STATUS</small><p id="Detalhes_status"></p></div></div>
+                <div class="detalhe-item"><span class="icone">⏱</span><div><small>ÚLTIMO TREINO</small><p id="Detalhes_ultimo"></p></div></div>
+            </div>
+            <div id="Detalhes_exercicios" class="exercicios-detalhe"></div>
+        </div>
+    </dialog>
+
+    <script src="./script.js"></script>
+</body>
+</html>

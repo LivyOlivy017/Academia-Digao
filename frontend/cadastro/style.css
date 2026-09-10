@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    min-height: 100vh;
+    font-family: Inter, Arial, sans-serif;
+    color: #fff;
+    background: #101512;
+}
+
+.page {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Formulário à esquerda, ocupando seu próprio espaço — não é mais um
+   cartão flutuando centralizado na tela. */
+.form-panel {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 48px 8vw;
+    background: #121613;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 420px;
+}
+
+form::before {
+    content: 'Criar conta';
+    font: 800 34px Montserrat, sans-serif;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+}
+
+form::after {
+    content: 'Preencha seus dados para começar';
+    order: -1;
+    color: #9aa19d;
+    font-size: 13px;
+    margin-bottom: 28px;
+}
+
+label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #dce1dd;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    height: 50px;
+    padding: 0 16px;
+    margin-bottom: 18px;
+    border: 1px solid #313934;
+    border-radius: 12px;
+    background: #101512;
+    color: #fff;
+    outline: none;
+    font: 15px Inter;
+    transition: .2s;
+}
+
+input:focus {
+    border-color: #c7ff00;
+    box-shadow: 0 0 0 4px rgba(199, 255, 0, .12);
+}
+
+#cadastro {
+    height: 52px;
+    border: 0;
+    border-radius: 12px;
+    background: #c7ff00;
+    color: #111;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    margin-top: 6px;
+    transition: .2s;
+}
+
+#cadastro:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(199, 255, 0, .22);
+}
+
+/* Painel direito: imagem + marca. Some no mobile. */
+.brand-panel {
+    flex: 1.1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 56px;
+    background: linear-gradient(180deg, rgba(5, 9, 7, .35), rgba(8, 12, 10, .92)), url('../imagem/ChatGPT Image 27 de ago. de 2026, 14_26_50 (1).png') center/cover;
+}
+
+.brand-mark {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: #c7ff00;
+    color: #111;
+    font: 800 22px Montserrat, sans-serif;
+    margin-bottom: 24px;
+}
+
+.brand-copy h2 {
+    font-family: Montserrat, sans-serif;
+    font-size: 32px;
+    letter-spacing: -1px;
+}
+
+.brand-copy p {
+    margin-top: 10px;
+    max-width: 320px;
+    color: #cfd6d1;
+    font-size: 14px;
+}
+
+@media (max-width: 860px) {
+    .page {
+        flex-direction: column-reverse;
+    }
+
+    .brand-panel {
+        display: none;
+    }
+
+    .form-panel {
+        padding: 40px 24px;
+        justify-content: center;
+    }
+}
